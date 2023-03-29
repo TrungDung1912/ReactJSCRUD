@@ -1,34 +1,36 @@
 import {Link, useNavigate} from 'react-router-dom'
 import "./EmpCreate.css";
 import {useState} from 'react'
-import axios from 'axios';
  
 
 const EmpCreate = () => {
-    const [id, idChange] = useState("");
+    const listusers = JSON.parse(localStorage.getItem("users"));
     const [name, nameChange] = useState("");
     const [email, emailChange] = useState("");
     const [phone, phoneChange] = useState("");
     const [active, activeChange] = useState(true);
-    const navigate = useNavigate();
+    const navigation = useNavigate();
+    const [users, setUsers] = useState(listusers);
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        try {
-          // Gửi yêu cầu HTTP đến API để thêm thông tin
-          await axios.post('http://localhost:3000/', {
-            name,
-            email,
-            phone,
-            active
-          });
-          // Chuyển hướng về trang chủ
-          navigate('/');
-        } catch (error) {
-          console.error(error);
-          // Xử lý lỗi nếu có
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const newUser = {
+            id: users.length + 1,
+            name: name,
+            email: email,
+            phone: phone,
+            active: active,
+          };
+        if(active){
+            users.push(newUser);
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("Đăng ký thành công")
+            return navigation("/");
+        } else {
+            alert("Try again");
+            return navigation ("/employee/create")
         }
-      };
+    }
 
     return (
         <div>
@@ -41,12 +43,6 @@ const EmpCreate = () => {
                             </div>
                             <div className="card-body" style={{textAlign: "left"}}>
                                 <div className="row">
-                                    <div className="form">
-                                        <div className="form-group">
-                                            <label>ID</label>
-                                            <input value={id} disabled="disabled" className="form-control"></input>
-                                        </div>
-                                    </div>
                                     <div className="form">
                                         <div className="form-group">
                                             <label>Name</label>
@@ -67,8 +63,8 @@ const EmpCreate = () => {
                                     </div>
                                     <div className="form">
                                         <div className="form-check">
-                                            <input checked = {active} onChange={e =>activeChange(e.target.checked)} type= "checkbox" className="form-check-input"></input>
                                             <label className="form-check-label">Is Active</label>
+                                            <input style={{width: "10%"}} checked = {active} onChange={e =>activeChange(e.target.checked)} type= "checkbox" className="form-check-input"></input>
                                         </div>
                                     </div>
                                     <div className="form">

@@ -31,10 +31,12 @@ input {
 
 .form-check {
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .form-check-label {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .btn {
@@ -51,6 +53,7 @@ input {
 
 .btn-primary {
   background-color: #078507;
+  text-decoration: none;
   color: #fff;
 }
 
@@ -58,8 +61,5 @@ input {
   background-color: #dc3545;
   color: #fff;
   text-decoration: none;
-}
-
-.btn:not(:last-child) {
-  margin-right: 10px;
+  margin-left: 10px;
 }

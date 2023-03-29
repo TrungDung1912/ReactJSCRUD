@@ -4,9 +4,13 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import EmpListing from "./components/EmpListing";
 import EmpCreate from './components/EmpCreate';
 import EmpDetail from './components/EmpDetail';
-import EmpEdit from './components/EmpEdit';
+import users from "./db.json";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    localStorage.setItem("users", JSON.stringify(users));
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>
@@ -14,7 +18,6 @@ function App() {
           <Route path='/' element={<EmpListing/>}></Route>
           <Route path='/employee/create' element={<EmpCreate/>}></Route>
           <Route path='/employee/detail/:empid' element={<EmpDetail/>}></Route>
-          <Route path='/employee/edit/:empid' element={<EmpEdit/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

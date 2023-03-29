@@ -1,0 +1,39 @@
+.table {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+    
+  }
+
+  .box-shadow {
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+  .card-title {
+    background-color: #8f4b06;
+    padding: 10px;
+    margin-bottom: 10px;
+    
+  }
+  
+  .card-title h2 {
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  button {
+    margin-top: 20px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  

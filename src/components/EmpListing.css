@@ -20,7 +20,13 @@
   .link {
     text-decoration: none;
     padding: 30px;
-    
+    background-color: #19e6e6;
+    border-radius: 0.7em;
+    padding: 10px;
+  }
+
+  .link:hover {
+    background-color: #e8cea6;
   }
 
   .link-to{
@@ -61,4 +67,45 @@
   
   table td button:hover {
     background-color: #0069d9;
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  
+  input[type="text"] {
+    font-size: 1em;
+    padding: 0.5em;
+    border: none;
+    border: 1px solid black;
+    margin-bottom: 1em;
+    max-width: 200px;
+  }
+  
+  button {
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #f4b049;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 35px;
+    margin-left: 20px;
+  }
+  
+  button:hover {
+    background-color: #dd970a;
+  }
+  
+  button:active {
+    background-color: #005cbf;
   }
