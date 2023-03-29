@@ -1,0 +1,6 @@
+[
+    {"id": 1, "name": "John", "email": "john@in.com", "phone": "555-1234"},
+    {"id": 2, "name": "Zing", "email": "zing@in.com", "phone": "555-1235"},
+    {"id": 3, "name": "Liu", "email": "liu@in.com", "phone": "555-1236"},
+    {"id": 4, "name": "Martin", "email": "martin@in.com", "phone": "555-1237"}
+]
